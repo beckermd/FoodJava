@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <div class="col-lg-12">
     <fieldset>
-        <form action="addRecipe" method="POST" class="form-horizontal" enctype="multipart/form-data">
+        <form action="show" method="POST" class="form-horizontal" enctype="multipart/form-data">
             <legend>Enter your Recipe</legend>
             <div class="form-group">
                 <label class="col-lg-4">Title</label>
@@ -52,6 +52,7 @@
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-</div>
+
 </form>
 </fieldset>
+</div>

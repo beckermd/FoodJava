@@ -7,7 +7,10 @@
     <groupId>FoodJava</groupId>
     <artifactId>FoodJava</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <modules>
+        <module>Ejercicios</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>

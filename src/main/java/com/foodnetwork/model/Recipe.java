@@ -63,4 +63,31 @@ public class Recipe {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Recipe recipe = (Recipe) o;
+
+        if (directions != null ? !directions.equals(recipe.directions) : recipe.directions != null) return false;
+        if (ingredients != null ? !ingredients.equals(recipe.ingredients) : recipe.ingredients != null) return false;
+        if (poster != null ? !poster.equals(recipe.poster) : recipe.poster != null) return false;
+        if (shortDescription != null ? !shortDescription.equals(recipe.shortDescription) : recipe.shortDescription != null)
+            return false;
+        if (title != null ? !title.equals(recipe.title) : recipe.title != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = title != null ? title.hashCode() : 0;
+          result = 31 * result + (poster != null ? poster.hashCode() : 0);
+          result = 31 * result + (shortDescription != null ? shortDescription.hashCode() : 0);
+          result = 31 * result + (ingredients != null ? ingredients.hashCode() : 0);
+          result = 31 * result + (directions != null ? directions.hashCode() : 0);
+        return result;
+    }
 }

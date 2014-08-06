@@ -3,6 +3,9 @@ package com.foodnetwork.dao;
 import com.foodnetwork.model.Recipe;
 import org.junit.Test;
 
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -15,8 +18,9 @@ import static org.junit.Assert.assertThat;
  */
 public class RecipeJdbcDAOTest {
     private RecipeJdbcDAO recipeJdbcDAO = new RecipeJdbcDAO();
+
     @Test
-    public void testAdd() throws Exception {
+    public void testAdd() {
 
         Recipe inputRecipe = new Recipe();
         inputRecipe.setTitle("Lemon Pie");
@@ -31,13 +35,26 @@ public class RecipeJdbcDAOTest {
         Recipe recipe = recipeJdbcDAO.add(inputRecipe);
 
         //Assert
-        assertThat(recipe.getTitle(), is(inputRecipe.getTitle()));
-        assertThat(recipe.getPoster(), is(inputRecipe.getPoster()));
-        assertThat(recipe.getShortDescription(),is(inputRecipe.getShortDescription()));
-        assertThat(recipe.getIngredients(),is(inputRecipe.getIngredients()));
-        assertThat(recipe.getDirections(), is(inputRecipe.getDirections()));
-        assertThat(recipe.getImageLocation(), is(inputRecipe.getImageLocation()));
+        assertThat(recipe.getTitle(), is("true"));
+
 
 
     }
+
+    @Test
+    public void testShow() {
+        Recipe recipe = new Recipe();
+        recipe.setTitle("Lemon Pie");
+        recipe.setPoster("Carlos");
+        recipe.setShortDescription("");
+        recipe.setIngredients("Harina 130 gr");
+        recipe.setDirections("mezclar todo");
+        List<Recipe> recipes = recipeJdbcDAO.getAllRecipes();
+
+
+        assertThat(recipes, hasItem(recipe));
+    }
+
+
 }
+

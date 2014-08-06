@@ -17,4 +17,15 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/food-network/*</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>showrecipe</servlet-name>
+        <servlet-class>HolaDanielitaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>showrecipe</servlet-name>
+        <url-pattern>/food-network/show</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>/newrecipe.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

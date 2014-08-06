@@ -2,6 +2,8 @@ package com.foodnetwork.dao;
 
 import com.foodnetwork.model.Recipe;
 
+import java.util.List;
+
 public class RecipeMockDAO implements RecipeDAO {
 
     @Override
@@ -15,5 +17,10 @@ public class RecipeMockDAO implements RecipeDAO {
         recipe.setImageLocation(inputRecipe.getImageLocation());
         return recipe;
 
+    }
+
+    @Override
+    public List<Recipe> getAllRecipes() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }
